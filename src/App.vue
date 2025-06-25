@@ -179,8 +179,6 @@ section h2 {
   border-radius: 50%;
   margin: 0 auto 20px;
   object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
 }
 
 .user-card h3 {
@@ -225,9 +223,37 @@ form {
   font-size: 0.95rem;
 }
 
-/* Radio accent */
+/* Radio buttons custom styling */
 input[type="radio"] {
-  accent-color: var(--cyan);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  outline: none;
+}
+
+input[type="radio"]:checked {
+  background: white;
+  border-color: var(--cyan);
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: var(--cyan);
+  border-radius: 50%;
 }
 
 .position-list {
