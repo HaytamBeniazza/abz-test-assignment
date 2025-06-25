@@ -72,26 +72,23 @@
           <span v-if="errors.position_id" class="error-message">{{ errors.position_id }}</span>
         </fieldset>
 
-        <div class="field">
-          <div class="file-input-wrapper">
-            <input
-              ref="fileInput"
-              type="file"
-              name="photo"
-              accept="image/jpeg,image/jpg"
-              :class="{ 'error': errors.photo }"
-              @change="handleFileChange"
-              id="photo-upload"
-              required
-            />
-            <label for="photo-upload" class="file-input-label">
-              <span>{{ fileName || 'Upload your photo' }}</span>
-              <span class="file-button">Browse</span>
-            </label>
+                  <div class="field">
+            <div class="upload-wrapper" :class="{ 'error': errors.photo }">
+              <label for="photo-upload" class="upload-btn">Upload</label>
+              <span class="upload-placeholder">{{ fileName || 'Upload your photo' }}</span>
+              <input
+                ref="fileInput"
+                type="file"
+                name="photo"
+                accept="image/jpeg,image/jpg"
+                @change="handleFileChange"
+                id="photo-upload"
+                required
+              />
+            </div>
+            <span v-if="errors.photo" class="error-message">{{ errors.photo }}</span>
+            <small class="helper-text">JPG/JPEG format, max 5MB, min 70x70px</small>
           </div>
-          <span v-if="errors.photo" class="error-message">{{ errors.photo }}</span>
-          <small class="helper-text">JPG/JPEG format, max 5MB, min 70x70px</small>
-        </div>
 
         <button 
           type="submit" 
@@ -337,45 +334,41 @@ export default {
 }
 
 /* File input styling */
-.file-input-wrapper {
-  position: relative;
-}
-
-.file-input-wrapper input[type="file"] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.file-input-label {
-  display: flex;
+.upload-wrapper {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  font-size: 13px;
+  overflow: hidden;
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--grey);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  background: #fff;
-  transition: border-color 0.2s ease;
 }
 
-.file-input-label:hover {
-  border-color: var(--cyan);
-}
-
-.file-input-wrapper input.error + .file-input-label {
+.upload-wrapper.error {
   border-color: #d32f2f;
 }
 
-.file-button {
-  background: var(--grey);
-  color: #fff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
+.upload-btn {
+  padding: 6px 18px;
+  background: #ffffff;
+  cursor: pointer;
+  border-right: 1px solid #c9c9c9;
+  user-select: none;
+}
+
+.upload-btn:hover {
+  background: #f5f5f5;
+}
+
+.upload-placeholder {
+  padding: 6px 18px;
+  color: #7b7b7b;
+  white-space: nowrap;
+  flex: 1;
+}
+
+#photo-upload {
+  display: none;
 }
 
 .success-message {
