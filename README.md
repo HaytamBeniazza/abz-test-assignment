@@ -1,10 +1,10 @@
 # Test Assignment – Front-end Developer
 
-A Vue 3 application for the ABZ.agency front-end developer test assignment, featuring user management with GET and POST API operations.
+A Vue 3 application front-end developer test assignment, featuring user management with GET and POST API operations.
 
 ## 🎯 Assignment Overview
 
-This project fulfills the requirements for the ABZ.agency front-end developer position test assignment, implementing:
+This project fulfills the requirements for the test assignment, implementing:
 
 - **Working with GET requests**: Display users with pagination
 - **Working with POST requests**: User registration form with validation
@@ -104,15 +104,6 @@ This project is configured for easy deployment on:
 - ✅ Vercel
 - ✅ GitHub Pages
 
-## 🌐 API Integration
-
-The application integrates with the ABZ.agency test API:
-- **Base URL**: `https://frontend-test-assignment-api.abz.agency/api/v1`
-- **Endpoints**:
-  - `GET /token` - Get authentication token
-  - `GET /users` - Fetch users with pagination
-  - `GET /positions` - Fetch available positions
-  - `POST /users` - Register new user
 
 ## 📱 Browser Support
 
