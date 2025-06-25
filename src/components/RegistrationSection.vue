@@ -10,7 +10,7 @@
         </div>
       </div>
       
-      <form v-else @submit.prevent="submitForm" class="registration-form">
+              <form v-else @submit.prevent="submitForm">
         <div class="field">
           <input
             v-model="form.name"
@@ -279,27 +279,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.registration-form {
-  max-width: 400px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .field {
   position: relative;
-}
-
-.field input[type="text"],
-.field input[type="email"],
-.field input[type="tel"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--grey);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  transition: border-color 0.2s ease;
 }
 
 .field input:focus {
@@ -323,11 +304,6 @@ export default {
   color: var(--text-light);
   font-size: 0.75rem;
   margin-top: 0.25rem;
-}
-
-/* Radio buttons */
-input[type="radio"] {
-  accent-color: var(--cyan);
 }
 
 .position-list {
@@ -400,11 +376,6 @@ input[type="radio"] {
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.8rem;
-}
-
-.submit-btn {
-  margin-top: 1rem;
-  padding: 0.75rem 2rem;
 }
 
 .success-message {

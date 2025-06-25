@@ -81,6 +81,12 @@ body {
   background: #fafafa;
 }
 
+#app {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* =====================
    GENERIC LAYOUT WRAPPER
    ===================== */
@@ -142,5 +148,105 @@ section h2 {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 2rem;
+}
+
+/* =====================
+   USER CARDS
+   ===================== */
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 992px) {
+  .user-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.user-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  padding: 20px;
+}
+
+.user-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.user-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.user-card p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+  line-height: 22px;
+}
+
+.show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* =====================
+   FORM STYLES
+   ===================== */
+form {
+  max-width: 400px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="file"],
+.field select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* Radio accent */
+input[type="radio"] {
+  accent-color: var(--cyan);
+}
+
+.position-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.position-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.agree {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
 }
 </style>

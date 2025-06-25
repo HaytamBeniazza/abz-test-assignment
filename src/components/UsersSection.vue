@@ -105,24 +105,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.user-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-@media (min-width: 992px) {
-  .user-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.show-more {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
 .loading {
   text-align: center;
   padding: 2rem;
